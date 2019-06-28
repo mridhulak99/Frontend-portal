@@ -1,0 +1,856 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+   
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <style>
+        .nav-link {
+            color: black;
+            
+        }
+        .nav {
+           
+        }
+        .nav-tabs .nav-link.active {
+            background-color: #F0F0F0;
+            color: darkblue;
+        }
+    </style>
+    
+    <style>
+        table {
+            overflow-y: scroll;
+            height: 150px;
+            display: block;
+
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: white;
+        }
+
+    </style>
+    <style>
+        h5{
+            font-weight:bold;
+        }
+        #mem{
+            color:blue;
+        }
+        .edit:hover {
+            color:blue;
+            text-decoration:underline;
+        }
+        .icon{
+            color:black;
+        }
+        .heading{
+            color:darkblue;
+            font-weight:bold;
+            font-size:18px;
+        }
+        .draft{
+            color:blue;
+        }
+        .draft:hover{
+            text-decoration:underline;
+        }
+        .remainder {
+            color: blue;
+            font-size: 10px;
+        }
+        .remainder:hover {
+            text-decoration: underline;
+            font-size:10px;
+        }
+        .card-header{
+            border:1px solid black;
+        }
+        .date{
+            font-size:10px;
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="nav nav-tabs bg-light " role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" href="#Calendar" role="tab" data-toggle="tab">Calender</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#Communicate" role="tab" data-toggle="tab">Communicate with the team</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#Publish" role="tab" data-toggle="tab">Publish updates/events</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#Manage" role="tab" data-toggle="tab">Manage your team</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <!--calender-->
+        <div role="tabpanel" class="tab-pane active " id="Calendar">
+            <div class="bg-light">
+                <div class="container">
+                    <br>
+
+                    <div class="row">
+                        
+                        <div class="col-8">
+                            
+                        </div>
+                        <div class="col-4">
+                            <div class="card">
+                                <h5 class="card-header" style="background-color:darkgreen;color:white">Important dates</h5>
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col">
+                                          
+                                            <p >22 May - Club meeting for juniors</p>
+                                            <p >5 June - Club introduction to new batch</p>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+
+        <!--communicate-->
+        <div role="tabpanel" class="tab-pane fade" id="Communicate">
+            <script>
+                $(document).ready(function () {
+                    $(".dropdown-menu li a").click(function () {
+                        $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+                        $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+                    });
+                });
+
+
+            </script>
+            <!-- modal for draft invite-->
+            <!-- The Modal -->
+            <div class="modal" id="mail_modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title">Send Mail...</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="container">
+                                <h5 class="text-center"></h5>
+
+                                <br>
+                                <div class="form-group">
+                                    <label class="mail">To:</label>
+                                    <input class="form-control" placeholder="To " type="text" name="name" id="name">
+                                    <br>
+                                    <label class="mail">Subject: </label>
+                                    <input class="form-control" id="purpose" type="text" placeholder="Subject ">
+                                    <br>
+                                    <p class="mail">Message </p>
+                                    <textarea class="form-control" rows="5" id="comment" placeholder="Message:"></textarea>
+                                    <br>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Send</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="background-color:#F0F0F0">
+                <div class="container">
+                    <br>
+                    <div class="row">
+                        <div class="col-3">
+                        </div>
+                        <div class="col-6">
+                            <div class="card">
+                                <h5 class="card-header text-center" style="background-color:darkblue;color:white">Send meeting invite</h5>
+                                <div class="card-body">
+                                    <input type="checkbox" name="send" value="Send to all"> Send to all<br>
+                                    <input type="checkbox" name="send" value="Send to sub-team"> Send to sub-team<br>
+                                    <div class="dropdown">
+                                        <label>Select sub group: &nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Select Sub-group
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenu1">
+                                            <li><a class="text-dark" href="#" data-value="Creativity Team">Creativity Team</a></li>
+                                            <li><a class="text-dark" href="#" data-value="Social Media Teamn">Social Media Team</a></li>
+                                        </ul>
+                                    </div>
+                                    <br>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#mail_modal">Draft invite</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div style="background-color:#E8E8E8">
+                <div class="container">
+                    <br>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card">
+                                <h5 class="card-header text-center" style="background-color:darkgreen;color:white">History</h5>
+                                <div class="card-body">
+
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <p>Reminder</p>
+                                            <p class="remainder">Reminder for 'Introduction to junior batch' event></p>
+                                            <p class="remainder">Reminder for 'Introduction to junior batch' event</p>
+                                        </div>
+                                        <div class="col-4">
+                                            <p >Date</p>
+                                            <p class="date">22/4/2019</p>
+                                            <p class="date">12/4/2019</p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="card" >
+                                <h5 class="card-header text-center" style="background-color:darkblue;color:white">Send Reminder</h5>
+                                <div class="card-body">
+
+                                    <div class="dropdown">
+                                        <label>Select event from calender: &nbsp;&nbsp;&nbsp;</label>
+                                        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                            Select event
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenu1">
+                                            <li><a class="text-dark" href="#" data-value="day1">Day1 </a></li>
+                                            <li><a class="text-dark" href="#" data-value="day2">Day2</a></li>
+                                        </ul>
+                                    </div>
+                                    <br>
+                                    <p class="text-center">OR</p>
+                                    <p class="draft" data-toggle="modal" data-target="#mail_modal">Draft Invite</p>
+                                    <input type="checkbox" name="send" value="Send to all"> Send to all<br>
+                                    <input type="checkbox" name="send" value="Send to sub-team"> Send to sub-team<br>
+                                    <div class="dropdown">
+                                        <label>Select sub group: &nbsp;&nbsp;&nbsp;</label>
+                                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" height="10">
+                                            Select Sub-group
+                                            <span class="caret"></span>
+                                        </button>
+                                        <ul class="dropdown-menu bg-light" aria-labelledby="dropdownMenu1">
+                                            <li><a class="text-dark" href="#" data-value="Creativity Team">Creativity Team</a></li>
+                                            <li><a class="text-dark" href="#" data-value="Social Media Teamn">Social Media Team</a></li>
+                                        </ul>
+                                    </div>
+                                    <br>
+                                    <div class="text-center">
+                                        <a href="#" class="btn btn-primary">Send invite</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- publish -->
+        <div role="tabpanel" class="tab-pane fade" id="Publish">
+            <div class="bg-light">
+                <div class="container">
+                    <br>
+                    
+                    <br>
+                    <h5 class="text-center" style="color:red;font-weight:bold;">Select the event you want to publish</h5>
+                    <br>
+                    <div class="row">
+                        <div class="col-2">
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" id="myInput" type="text" placeholder="Search Events...">
+                            <br>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width:40%">Event</th>
+                                        <th style="width:40%">Date</th>
+                                        <th style="width:30%">Action</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    <tr>
+                                        <td>Workshop on 'Designing Robots</td>
+                                        <td> 21 July'19</td>
+                                        <td><input type="checkbox" /></td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Robo Wars' competition </td>
+                                        <td>9 September'19</td>
+                                        <td><input type="checkbox" /></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-2">
+                        </div>
+                    </div>
+                    <br>
+                    <h5 class="text-center" style="font-weight:bold">Where do you want to publish?</h5>
+                    <br>
+                    <div class="row">
+                        <div class="col text-center">
+                            <button class="btn btn-primary publish">Publish on main page</button>
+                        </div>
+                        <div class="col text-center ">
+                            <button class="btn btn-primary publish">Publish on newletter</button>
+                        </div>
+                        <div class="col text-center">
+                            <button class="btn btn-primary publish">Publish on your club page</button>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+                
+
+            </div>
+
+        </div>
+
+        <!-- manage-->
+        <div role="tabpanel" class="tab-pane fade" id="Manage">
+            <!-- The Modal -->
+            <div class="modal" id="edit_modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h4 class="modal-title">Complete Sub-Team Details...</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="container">
+                                <h5 class="text-center"></h5>
+                                <div class="row">
+                                    <br>
+                                    <div class="form-group">
+                                        <p class="editname">Name:</p>
+                                        <input class="form-control" placeholder="Enter name " type="text" name="name" id="name">
+                                        <br>
+                                        <p class="editname">position </p>
+                                        <input class="form-control" id="purpose" type="text" placeholder="Enter position">
+                                        <br>
+                                        <p class="editname">Email id </p>
+                                        <input class="form-control" id="email" type="email" placeholder="Enter email">
+                                        <br>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <div class="text-center">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Update</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bg-light">
+                <div class="container">
+                    <br>
+                    <h5 class="text-center">Manage your team</h5>
+                    <br>
+                    <div class="row">
+
+                        <div class="col-2">
+                        </div>
+                        <div class="col-8">
+                            <input class="form-control" id="myInput" type="text" placeholder="Search members...">
+                            <br>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width:30%">Name</th>
+                                        <th style="width:30%">Position</th>
+                                        <th style="width:30%">Email ID</th>
+                                        <th style="width:10%">Change</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="myTable">
+                                    <tr>
+                                        <td>mridhula</td>
+                                        <td>member</td>
+                                        <td>mridhula@gmail.com</td>
+                                        <td><p class="edit" id="mridhula" data-toggle="modal" data-target="#edit_modal">edit</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>tulika</td>
+                                        <td>member</td>
+                                        <td>tulika@gmail.com</td>
+                                        <td><p class="edit" id="tulika">edit</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>jhon</td>
+                                        <td>sec</td>
+                                        <td>july@greatstuff.com</td>
+                                        <td><p class="edit" id="tulika">edit</p></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Anja</td>
+                                        <td>president</td>
+                                        <td>a_r@test.com</td>
+                                        <td><p class="edit" id="tulika">edit</p></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-2">
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+
+                <div class="modal" id="add_modal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <h4 class="modal-title">Complete Sub-Team Details...</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="container">
+                                    <h5 class="text-center"></h5>
+                                    <div class="row">
+                                        <br>
+                                        <form autocomplete="off" action="">
+                                            <div class="autocomplete" style="width:300px;">
+                                                <p class="editname">Name </p>
+                                                <input class="form-control" id="inputsearch" type="text" name="name" placeholder="Enter name">
+                                                <br>
+                                                <p class="editname">position </p>
+                                                <input class="form-control" id="purpose" type="text" placeholder="Enter position">
+                                                <br>
+                                                <p class="editname">Email id </p>
+                                                <input class="form-control" id="email" type="email" placeholder="Enter email">
+                                                <br>
+                                            </div>
+
+                                        </form>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Add member</button>
+
+                                </div>
+
+                            </div>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                <!--add member-->
+                <div class="bg-light">
+                    <div class="container">
+                        <div class="text-center">
+                            <br>
+                            <h5>Add your team members</h5>
+                            <br>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_modal">Add member</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+
+
+
+                <div style="background-color:#F0F0F0">
+                    <div class="container">
+
+                        <br>
+                        <h5 class="text-center">Sub-Teams in your group</h5>
+                        <br>
+                        <div class="row">
+                            <div class="col-3 d-flex">
+                                <div class="card flex-fill" style="width: 18rem;">
+                                    <div class="card-body ">
+                                        <p class="text-right">
+                                            <a href="#" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Edit"><i data-toggle="modal" data-target="#editsubteam_modal" class="icon fas fa-pencil-alt text-right"></i></a>
+                                            <a href="#" data-trigger="hover" data-toggle="popover" data-placement="top" data-content="Delete"><i class="icon fa fa-times text-right"></i></a>
+                                        </p>
+                                        <p class="heading card-text text-center">
+                                            Creativity Team
+                                        </p>
+                                        <h6 class="card-subtitle mb-2 text-muted">They are motivated work together as a team to devise and develop creative ideas.</h6>
+
+                                        <a href="#" class="card-link">3 members</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex">
+                                <div class="card flex-fill" style="width: 18rem;">
+                                    <div class="card-body ">
+                                        <p class="text-right">
+                                            <i class="fas fa-pencil-alt text-right"></i>
+                                            <i class="fa fa-times text-right"></i>
+                                        </p>
+                                        <p class="heading card-text text-center">
+                                            Social MediaTeam
+                                        </p>
+
+                                        <h6 class="card-subtitle mb-2 text-muted">Social media is a rapidly changing arena for marketing . </h6>
+                                        <a href="#" class="card-link">4 members</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex">
+                                <div class="card flex-fill" style="width: 18rem;">
+                                    <div class="card-body ">
+                                        <p class="text-right">
+                                            <i class="fas fa-pencil-alt text-right"></i>
+                                            <i class="fa fa-times text-right"></i>
+                                        </p>
+                                        <p class="heading card-text text-center">
+                                            Social MediaTeam
+                                        </p>
+
+                                        <h6 class="card-subtitle mb-2 text-muted">Social media is a rapidly changing arena for marketing .</h6>
+                                        <a href="#" class="card-link">4 members</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-3 d-flex">
+                                <div class="card flex-fill" style="width: 18rem;">
+                                    <div class="card-body ">
+                                        <p class="text-right">
+                                            <i class="fas fa-pencil-alt text-right"></i>
+                                            <i class="fa fa-times text-right"></i>
+                                        </p>
+                                        <p class="heading card-text text-center">
+                                            Social MediaTeam
+                                        </p>
+
+                                        <h6 class="card-subtitle mb-2 text-muted">Social media is a rapidly changing arena for marketing.  </h6>
+                                        <a href="#" class="card-link">4 members</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="container">
+                        <div class="text-center">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#subteam_modal">Add Subteam</button>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+                    <!-- The Modal for edit subgroup-->
+                    <div class="modal" id="editsubteam_modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Edit Sub-Team Details...</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <h5 class="text-center"></h5>
+                                        <div class="row">
+                                            <br>
+                                            <div class="form-group">
+                                                <p class="textprofile">Name of the sub-team</p>
+                                                <input class="form-control" placeholder="Enter Name of the sub-team: " type="text" name="subname" id="subname" required autofocus>
+                                                <br>
+                                                <p class="textprofile">Purpose </p>
+                                                <input class="form-control" id="purpose" type="text" placeholder="Enter purpose">
+                                                <br>
+                                                <p class="textprofile">Members Selected </p>
+                                                <p id="mem"></p>
+                                                <br>
+                                                <p class="textprofile">Select members...</p>
+                                                <input id="myInput1" class="form-control" type="text" placeholder="Search members...">
+                                                <br>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Position</th>
+                                                            <th>Email ID</th>
+                                                            <th>Check</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="myTable1">
+                                                        <tr>
+                                                            <td>mridhula</td>
+                                                            <td>member</td>
+                                                            <td>mridhula@gmail.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="mridhula"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>tulika</td>
+                                                            <td>member</td>
+                                                            <td>tulika@gmail.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="tulika"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>jhon</td>
+                                                            <td>sec</td>
+                                                            <td>july@greatstuff.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="jhon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Anja</td>
+                                                            <td>president</td>
+                                                            <td>a_r@test.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="anja"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Update</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Modal for add subgroup-->
+                    <div class="modal" id="subteam_modal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Complete Sub-Team Details...</h4>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+
+                                <!-- Modal body -->
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <h5 class="text-center"></h5>
+                                        <div class="row">
+                                            <br>
+                                            <div class="form-group">
+                                                <p class="textprofile">Name of the sub-team</p>
+                                                <input class="form-control" placeholder="Enter Name of the sub-team: " type="text" name="subname" id="subname" required autofocus>
+                                                <br>
+                                                <p class="textprofile">Purpose </p>
+                                                <input class="form-control" id="purpose" type="text" placeholder="Enter purpose">
+                                                <br>
+                                                <p class="textprofile">Members Selected </p>
+                                                <p id="mem"></p>
+                                                <br>
+                                                <p class="textprofile">Select members...</p>
+                                                <input class="form-control myInput1" type="text" placeholder="Search members...">
+                                                <br>
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>Position</th>
+                                                            <th>Email ID</th>
+                                                            <th>Check</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody class="myTable1">
+                                                        <tr>
+                                                            <td>mridhula</td>
+                                                            <td>member</td>
+                                                            <td>mridhula@gmail.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="mridhula"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>tulika</td>
+                                                            <td>member</td>
+                                                            <td>tulika@gmail.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="tulika"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>jhon</td>
+                                                            <td>sec</td>
+                                                            <td>july@greatstuff.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="jhon"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Anja</td>
+                                                            <td>president</td>
+                                                            <td>a_r@test.com</td>
+                                                            <td><input class="checkbox1" type="checkbox" name="member1" value="anja"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <div class="text-center">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Add</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+    </div>
+    
+    <script>
+        $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+    <script>
+        //for the search meny
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            $("#myInput1").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable1 tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.checkbox1').change(function () {
+                $("#mem").empty();
+                $('input[name="member1"]:checked').each(function () {
+                    console.log(this.value);
+
+                    $("#mem").append(this.value + ", ");
+                });
+            });
+        });
+
+    </script>
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

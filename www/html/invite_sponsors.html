@@ -1,0 +1,420 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>clubs For You</title>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            $("#myInput1").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable1 tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            $("#myInput2").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable2 tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            
+
+        });
+    </script>
+    <style>
+        .tabs {
+            color: black;
+            font-weight: bold;
+        }
+    </style>
+    <style>
+        
+        table {
+            overflow-y: scroll;
+            height: 300px;
+            display: block;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+        .edit {
+            color: blue;
+        }
+        .edit:hover{
+            text-decoration:underline
+         }
+    </style>
+</head>
+<body>
+   
+    <div class="bg-light">
+        <div class="container">
+            <br />
+            <div class="row">
+                <div class="col-3">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active tabs" id="v-pills-last-tab" data-toggle="pill" href="#v-pills-last" role="tab" aria-controls="v-pills-home" aria-selected="true">Last Years Sponsors</a>
+                        <a class="nav-link tabs" id="v-pills-potential-tab" data-toggle="pill" href="#v-pills-potential" role="tab" aria-controls="v-pills-potential" aria-selected="false">Potential sponsors</a>
+                        <a class="nav-link tabs" id="v-pills-other-tab" data-toggle="pill" href="#v-pills-other" role="tab" aria-controls="v-pills-other" aria-selected="false">Other organisations</a>
+
+                    </div>
+                </div>
+                <div class="col-9">
+                    
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-last" role="tabpanel" aria-labelledby="v-pills-last-tab">
+                            <!-- The Modal to add -->
+                            <div class="modal" id="last_modal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add new sponsor</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <h5 class="text-center"></h5>
+
+                                                <br>
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="Company Name " type="text" name="name" id="name">
+                                                    <br />
+                                                    <input class="form-control" id="poc" type="text" placeholder="POC ">
+                                                    <br>
+                                                    <input class="form-control" id="contact" type="text" placeholder="Contact No. ">
+                                                    <br>
+                                                    <input class="form-control" id="ccontactno" type="text" placeholder="Company Contact No. ">
+                                                    <br />
+                                                    <input class="form-control" id="email" type="email" placeholder="Email id ">
+                                                    <br />
+                                                    <input class="form-control" id="status" type="text" placeholder="Status ">
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Send</button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <br>
+                            <h5 class="text-center" style="color:black;font-weight:bold;">Last Year Sponsors</h5>
+                            <br>
+                            <div class="row">
+                                
+                                <div class="col-12">
+
+                                    <input class="form-control" id="myInput" type="text" placeholder="Search Sponsors...">
+                                    <br>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr style="background-color:#f2f2f2;">
+                                                <th>Company Name</th>
+                                                <th>POC</th>
+                                                <th>Contact no.</th>
+                                                <th>Company contact no.</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Notes</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable">
+                                            <tr>
+                                                <td>IOCL</td>
+                                                <td>ABC</td>
+                                                <td>123</td>
+                                                <td>1233</td>
+                                                <td>abc@abc.com</td>
+                                                <td>Awaiting response</td>
+                                                <td>notes</td>
+                                                <td><label class="edit">edit</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Microsoft</td>
+                                                <td>ABC</td>
+                                                <td>123</td>
+                                                <td>1233</td>
+                                                <td>abc@abc.com</td>
+                                                <td>Awaiting response</td>
+                                                <td>notes</td>
+                                                <td><label class="edit">edit</label></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#last_modal">Add new sponsors</button>
+                                    </div>
+                                    
+                                    <br />
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-potential" role="tabpanel" aria-labelledby="v-pills-potential-tab">
+                            <!-- The Modal to add -->
+                            <div class="modal" id="potential">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add new sponsor</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <h5 class="text-center"></h5>
+
+                                                <br>
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="Company Name " type="text" name="name" id="name">
+                                                    <br />
+                                                    <input class="form-control" id="poc" type="text" placeholder="POC ">
+                                                    <br>
+                                                    <input class="form-control" id="contact" type="text" placeholder="Contact No. ">
+                                                    <br>
+                                                    <input class="form-control" id="ccontactno" type="text" placeholder="Company Contact No. ">
+                                                    <br />
+                                                    <input class="form-control" id="email" type="email" placeholder="Email id ">
+                                                    <br />
+                                                    <input class="form-control" id="status" type="text" placeholder="Status ">
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Send</button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <br>
+                            <h5 class="text-center" style="color:black;font-weight:bold;">Potential Sponsors</h5>
+                            <br>
+                            <div class="row">
+
+                                <div class="col-12">
+
+                                    <input class="form-control" id="myInput1" type="text" placeholder="Search Sponsors...">
+                                    <br>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr style="background-color:#f2f2f2;">
+                                                <th>Company Name</th>
+                                                <th>POC</th>
+                                                <th>Contact no.</th>
+                                                <th>Company contact no.</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Notes</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable1">
+                                            <tr>
+                                                <td>IOCL</td>
+                                                <td>ABC</td>
+                                                <td>123</td>
+                                                <td>1233</td>
+                                                <td>abc@abc.com</td>
+                                                <td>Awaiting response</td>
+                                                <td>notes</td>
+                                                <td><label class="edit">edit</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Microsoft</td>
+                                                <td>ABC</td>
+                                                <td>123</td>
+                                                <td>1233</td>
+                                                <td>abc@abc.com</td>
+                                                <td>Awaiting response</td>
+                                                <td>notes</td>
+                                                <td><label class="edit">edit</label></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#potential">Add new sponsors</button>
+                                    </div>
+
+                                    <br />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-other" role="tabpanel" aria-labelledby="v-pills-other-tab">
+                            <!-- The Modal to add -->
+                            <div class="modal" id="other">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add new sponsor</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="container">
+                                                <h5 class="text-center"></h5>
+
+                                                <br>
+                                                <div class="form-group">
+                                                    <input class="form-control" placeholder="Company Name " type="text" name="name" id="name">
+                                                    <br />
+                                                    <input class="form-control" id="poc" type="text" placeholder="POC ">
+                                                    <br>
+                                                    <input class="form-control" id="contact" type="text" placeholder="Contact No. ">
+                                                    <br>
+                                                    <input class="form-control" id="ccontactno" type="text" placeholder="Company Contact No. ">
+                                                    <br />
+                                                    <input class="form-control" id="email" type="email" placeholder="Email id ">
+                                                    <br />
+                                                    <input class="form-control" id="status" type="text" placeholder="Status ">
+                                                    <br />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Send</button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+
+                            <br>
+                            <h5 class="text-center" style="color:black;font-weight:bold;">Other Sponsors</h5>
+                            <br>
+                            <div class="row">
+
+                                <div class="col-12">
+
+                                    <input class="form-control" id="myInput2" type="text" placeholder="Search Sponsors...">
+                                    <br>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr style="background-color:#f2f2f2;">
+                                                <th>Company Name</th>
+                                                <th>POC</th>
+                                                <th>Contact no.</th>
+                                                <th>Company contact no.</th>
+                                                <th>Email</th>
+                                                <th>Status</th>
+                                                <th>Notes</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="myTable2">
+                                            <tr>
+                                                <td>IOCL</td>
+                                                <td>ABC</td>
+                                                <td>123</td>
+                                                <td>1233</td>
+                                                <td>abc@abc.com</td>
+                                                <td>Awaiting response</td>
+                                                <td>notes</td>
+                                                <td><label class="edit">edit</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Microsoft</td>
+                                                <td>ABC</td>
+                                                <td>123</td>
+                                                <td>1233</td>
+                                                <td>abc@abc.com</td>
+                                                <td>Awaiting response</td>
+                                                <td>notes</td>
+                                                <td><label class="edit">edit</label></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#other">Add new sponsors</button>
+                                    </div>
+
+                                    <br />
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

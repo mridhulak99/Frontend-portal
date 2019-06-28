@@ -1,0 +1,219 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+    <style>
+        #signuppage {
+            text-align: center;
+        }
+
+        #forgot {
+            font-size: 13px;
+            color: blue;
+        }
+
+            #forgot:hover {
+                text-decoration: underline;
+                color: blue;
+            }
+
+        .tab {
+            color: blue;
+        }
+
+            .tab:hover {
+                text-decoration: underline;
+            }
+
+        .drop {
+            width: 300px;
+            align-content: center;
+            width: 200px;
+            margin-left: 42%;
+            text-align: center
+        }
+        .head{
+            background-color:darkblue;
+            color:white;
+            
+        }
+        .image{
+            height:70px;
+            width:70px;
+        }
+        .heading{
+            font-weight:bold;
+            font-size:17px;
+        }
+        .text {
+            font-size: 15px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            $('#signuppage').validate({
+                rules: {
+                    username: {
+                        required: true,
+                        email:true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    lname: {
+                        required: true,
+                        email: true
+                    },
+                    fname: {
+                        required: true,
+                        minlength: 5
+                    }
+                }
+            });
+
+        });
+    </script>
+    <title>Signup</title>
+</head>
+<body>
+    <div style="background-color:#fff7e6">
+        <div class="container">
+            <br />
+            <h4 class="text-center">Why CLUBS4ALL?</h4>
+            <div class="row justify-content-sm-center">
+                
+                <div class="col-8">
+                    <br />
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="text-center">
+                                <img class="image" src="../pics/icons8-find-and-replace-64 (1).png" />
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <p class="heading">EXPLORE WHAT ALL CLUBS ARE THERE ON YOUR CAMPUS?</p>
+                            <p class="text">Browse to see all the registered clubs from your campus with us and stay updated about all the events, competetions and fests happening around.</p>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-9">
+                            <p class="heading">FORM YOUR OWN CLUB AND MANAGE ACTIVITIES</p>
+                            <p class="text">List your college club and be more transperent about what's going on in you club.</p>
+                        </div>
+                        <div class="col-3">
+                            <div class="text-center">
+                                <img class="image" src="../pics/icons8-construction-worker-96.png" />
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="text-center">
+                                <img class="image" src="../pics/icons8-clock-96.png" />
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <p class="heading">SAVE YOUR TIME AND GET UPDATES FROM YOUR CLUB.</p>
+                            <p class="text">
+                                You don't want to be stuck doing admin work. Clubs4all has made it easier for you to assign and manage club activites.
+
+                                For example, if you plan a task for someone on the team groups, it will automatically appear on their personal to-do list.
+                            </p>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-9">
+                            <p class="heading">PROMOTE YOUR CLUB, PUBLISH UPDATES & INVITE SPONSORS THROUGH US.</p>
+                            <p class="text">Promote your club, upload posts and pictures, connect with other colleges to increase participation., Invite Sponsors and get funding for your events.</p>
+                        </div>
+                        <div class="col-3">
+                            <div class="text-center">
+                                <img class="image" src="../pics/icons8-billboard-64.png" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                
+                <div class="col-4">
+                    <br>
+                    <div class="card border-info text-center">
+                        <div class="card-header head" >
+                            <h4>Signup</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="signup" class="form-signin form" method="post" action="/process-signup">
+                                <div class="form-group">
+                                    <input type="text" class="form-control mb-2" placeholder="Username (Email Address):" name="email_address" id="email_address" value="" required autofocus>
+
+                                    <input type="password" class="form-control mb-2" placeholder="Password" id="password" name="password" value="">
+                                    <input class="form-control mb-2" placeholder="Firstname" type="text" name="first_name" id="first_name" value="">
+                                    <input class="form-control mb-2" placeholder="Lastname" type="text" name="last_name" id="last_name" value="">
+
+                                    <div class="input-group mb-3">
+                                        <select class="custom-select" id="college_state" name="college_state">
+                                            <option selected value="default">College Location (State)</option>
+                                            <option>Maharashtra</option>
+                                            <option>Rajasthan</option>
+                                            <option>West Bengal</option>
+                                        </select>
+                                    </div>
+                                    <div class="state_errors"></div>
+
+                                    <div class="input-group mb-3">
+                                        <select class="custom-select" id="college" name="college">
+                                            <option selected value="default">College Name</option>
+                                            <option>VIT Vellore</option>
+                                            <option>IIT Delhi</option>
+                                        </select>
+                                    </div>
+                                    <div class="college_errors"></div>
+
+                                    <input class="form-control mb-2" placeholder="Course" type="text" name="course" id="course">
+                                    <input class="form-control mb-2" placeholder="Year" type="text" name="year" id="year">
+
+                                    <div id="errors" class="errors" name="errors"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block mb-1">Register</button>
+                                <br />
+
+                            </form>
+                            <p>or</p>
+                            <a href="#" onclick="doFacebookLogin();return false;" id="fbLink"><img src="https://png.icons8.com/color/x/facebook.png" alt="Image result for login with facebook" />Register with facebook</a>
+                            <br>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

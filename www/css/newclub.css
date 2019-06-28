@@ -1,0 +1,14 @@
+﻿#newclubform {
+    text-align: center;
+}
+
+
+.tab {
+    color: blue;
+}
+
+.tab:hover {
+    text-decoration: underline;
+}
+
+

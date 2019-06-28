@@ -1,0 +1,1230 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    <script src="https://www.jquery-az.com/boots/js/newsbox/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+    <style>
+
+
+        .create {
+            background-color: #F5F5F5;
+        }
+
+            .create .head {
+                font-size: 20px;
+                padding: 13px;
+                font-weight: bold;
+                font-family: Verdana;
+            }
+
+            .create .button {
+                width: 200px;
+                background-color: #181818;
+                color: white;
+                font-weight: bold;
+            }
+
+                .create .button:hover {
+                    width: 200px;
+                    background-color: #181818;
+                    color: white;
+                    text-decoration: underline;
+                    font-weight: bold;
+                }
+
+        .profile {
+            background-color: #F8F8F8;
+        }
+
+        .events {
+            background-color: #F0F0F0;
+            color: black;
+            font-weight: bold;
+            padding: 2px;
+            font-family: Verdana;
+        }
+
+            .events .head {
+                font-size: 20px;
+                padding: 13px;
+                font-weight: bold;
+                font-family: Verdana;
+                text-align: center
+            }
+
+        .event-button {
+            width: 80%;
+            background-color: #181818;
+            color: white;
+            font-weight: bold;
+        }
+
+            .event-button:hover {
+                width: 80%;
+                background-color: #181818;
+                color: white;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+
+
+        .announcements .head {
+            font-size: 20px;
+            padding: 13px;
+            font-weight: bold;
+            font-family: Verdana;
+            text-align: center;
+            position: page
+        }
+
+        .announcements .text {
+            margin: 10px;
+            border: 1px solid black;
+            background-color: white;
+            padding-top: 5px;
+        }
+
+            .announcements .text .head {
+                font-size: 18px;
+                text-align: center;
+            }
+
+        .footer {
+            color: white;
+        }
+
+        .new-msg {
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        .msg-box {
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        .text-msg {
+            margin: 5px;
+        }
+
+        .send-button {
+            width: 70%;
+            text-align: center;
+        }
+
+        .dropdown-menu {
+            background-color: lightgray;
+            color: black;
+        }
+
+        .drop {
+            color: white;
+        }
+
+        .cardview {
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        .card_img {
+            height: 30px;
+            width: 30px;
+        }
+
+        .card-name {
+            margin: 5px;
+            padding: 2px;
+            color: black;
+            font-family: Verdana;
+            font-weight: bold;
+            font-size: 15px;
+            background-color: white
+        }
+
+        .card-img {
+            height: 170px;
+        }
+
+        .content {
+            text-align: left;
+            width: 80%;
+            margin-left: 10%;
+            margin-right: 10%;
+            border: 1px solid black;
+            padding: 2%;
+            background-color: white
+        }
+
+        .heading {
+            font-weight: bold;
+        }
+
+        .break {
+            margin: 5px
+        }
+
+        .contact-img {
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+
+        .contact-block {
+            background-color: black;
+            color: white;
+        }
+
+        .contact .head {
+            font-size: 25px;
+            padding: 10px;
+            font-weight: bold;
+            font-family: Verdana;
+            color: white
+        }
+
+        .contact .pos {
+            font-size: 15px;
+            font-weight: bold;
+            font-family: Verdana;
+            color: white
+        }
+
+        .contact .name {
+            font-size: 15px;
+            font-weight: bold;
+            font-family: Verdana;
+            color: white
+        }
+
+        .contact .follow {
+            color: darkblue
+        }
+
+        .about-block {
+            background-color: #282828;
+            color: white;
+            font-weight: bold;
+        }
+
+        .notifications .card-header {
+            background-color: darkblue;
+            color: white;
+            font-weight: bold;
+        }
+
+        .notifications .card-body {
+            background-color: #F8F8F8;
+        }
+
+        .notifications {
+            border: 1px solid black;
+        }
+
+        .notification-list {
+            overflow-y: scroll;
+            max-height: 200px
+        }
+
+            .notification-list li:hover {
+                text-decoration: underline;
+            }
+
+        .todo .card-header {
+            color: white;
+            font-weight: bold;
+            background-color: #660033;
+        }
+
+        .todo .card-body {
+            background-color: #F8F8F8;
+        }
+
+        .todo {
+            border: 1px solid black;
+        }
+
+        .todo-list {
+            overflow-y: scroll;
+            max-height: 200px
+        }
+
+            .todo-list li:hover {
+                text-decoration: underline;
+            }
+
+        .messaging .card-body {
+            background-color: #F8F8F8;
+        }
+
+        .messaging .card-header {
+            background-color: darkred;
+            color: white;
+            font-weight: bold;
+        }
+
+        .msg-name {
+            padding: 1px;
+        }
+
+        .msg_img {
+            height: 30px;
+            width: 30px;
+        }
+
+        .message-list {
+            font-weight: bold;
+            overflow-y: scroll;
+            max-height: 200px;
+            padding-top: 2px;
+        }
+
+        .messaging {
+            border: 1px solid black;
+        }
+
+        #newpost .modal-header {
+            background-color: #E8E8E8;
+            color: black;
+            font-weight: bold;
+            font-family: Verdana;
+            padding-left: 30px;
+            font-size: 25px;
+        }
+
+        #newpost .modal-body {
+            background-color: #E8E8E8;
+        }
+
+        #newpost {
+            color: black;
+            font-weight: bold;
+            padding: 2px;
+            font-family: Verdana;
+            border: 2px solid black;
+        }
+
+        .modal-event .modal-header {
+            background-color: #E8E8E8;
+            color: black;
+            font-weight: bold;
+            font-family: Verdana;
+            padding-left: 30px;
+            font-size: 27px;
+        }
+
+        .modal-event .modal-body {
+            background-color: #E8E8E8;
+        }
+
+        .modal-event .img {
+            height: 170px;
+            width: 100%;
+            border: 1px solid black;
+        }
+
+        .modal-event .head {
+            color: black;
+            background-color: #E8E8E8;
+            font-weight: bold;
+            font-family: Verdana;
+            font-size: 18px;
+        }
+
+        .modal-event .text {
+            color: black;
+            font-size: 15px;
+            font-family: Verdana;
+        }
+
+        .readmore {
+            color: blue;
+            font-size: 12px;
+            text-align: right;
+        }
+
+            .readmore:hover {
+                text-decoration: underline;
+            }
+
+        .events .text {
+            font-size: 13px;
+            font-weight: normal
+        }
+
+        .time {
+            float: right;
+            font-size: 12px;
+            color: grey;
+        }
+
+        .time1 {
+            float: right;
+            font-size: 12px;
+            color: grey;
+        }
+
+        .reply {
+            border: 1px solid black;
+        }
+
+        .viewreplies {
+            font-size: 14px;
+            color: blue;
+        }
+
+            .viewreplies:hover {
+                text-decoration: underline;
+                color: blue;
+            }
+
+        .likeicon {
+            color: gray
+        }
+
+        #todolistpopup .head {
+            font-weight: bold;
+            font-family: Verdana;
+        }
+      
+    </style>
+    <!--toggle switch-->
+    <style>
+    </style>
+    <script>
+        //current time
+        function timeNow() {
+            return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        }
+        //for photo listener on click
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah1').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $(function () {
+            //camera
+            $("#camera").click(function () {
+                $("#camera1").trigger('click');
+            });
+            $("#camera1").change(function (e) {
+                var fileName = e.target.files[0].name;
+                console.log(fileName);
+                $("#cam-txt").val('');
+                $("#cam-txt").text(fileName);
+                $("#blah1").css("display", "block");
+                readURL(this);
+            });
+            //dropdowns
+            $(".dropdown-menu1 li a").click(function () {
+
+                $(".subgroup:first-child").text($(this).text());
+                $(".subgroup:first-child").val($(this).text());
+
+            });
+            $(".dropdown-menu2 li a").click(function () {
+
+                $(".personal:first-child").text($(this).text());
+                $(".personal:first-child").val($(this).text());
+
+            });
+
+            //listener for view all repies
+            
+            $("#profile").on("click", ".viewreplies", function () {
+                console.log("clicked:");
+                console.log($(this).prev());
+                $(this).offsetParent().find(".replies").html(function (i, origText) {
+                    return origText + '<div class="card-name"> <img class="card_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;Mridhula<span class="time1">- 4:30 </span><p class="card-text text">Hey guys check out our new event...</p> </div>';
+                });
+            });
+
+            //listener for reply button in dash board
+            $("#profile").on("click", ".replybtn", function () {
+                console.log("clicked:");
+                console.log($(this).parents(".cardview").find(".reply").val())
+               
+                if ($(this).parents(".cardview").find(".reply").val() != '') {
+                    var v = $(this).parents(".cardview").find(".reply").val();
+                    $(this).parents(".cardview").find(".reply").val('')
+                    $(this).parents(".cardview").find(".replies").html(function (i, origText) {
+
+                        return '<div class="card-name"> <img class="card_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;Mridhula<span class="time1">- ' + timeNow() +'</span><p class="card-text text">' + v + '</p> </div>'+origText ;
+                    });
+                }
+                else {
+                    $(this).parents(".cardview").find(".replies").html(function (i, origText) {
+
+                        return origText ;
+                    });
+                }
+            });
+
+            //for search option in messaging list
+            $("#searchcontact").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#contacts .list-group-item").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            //creating a new post on feed
+            $("#createpost").click(function () {
+                console.log("clicked");
+                var v = $("#hey").val();
+                $("#blah1").css("display", "none");
+                
+                $("#cam-txt").val('');
+
+                var p = '<div class="cardview">' +
+                    '<div class="cardview">' +
+                    '<div class="card profile">' +
+                    '<div class="card-name"> <img class="card_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;Aarti<span class="time1">' + timeNow() +'</span> </div>' +
+                    ' <div class="card-body">' +
+                    '<p class="card-text heading">' + v + '</p>';
+
+                var v = $('#blah1').attr('src');
+
+                console.log($('#blah1').attr('src'));
+
+
+                if (v != "")
+                    p += '<img class="card-img" src="' + $('#blah1').attr('src') + '" />';
+
+                p += ' <p class="likeicon"><span class="like"><i class="fas fa-thumbs-up "></i></span>&nbsp;&nbsp;<i class="fas fa-reply"></i></p>' +
+                    '<div class="text-center">' +
+                    ' <div class="input-group">' +
+                    ' <input class="form-control reply" type="search" placeholder="Reply">' +
+                    ' <span class="input-group-append">' +
+                    '  <button class="btn btn-outline-secondary replybtn" type="button">' +
+                    '      <i class="fas fa-reply"></i>' +
+                    '  </button>' +
+                    '</span>' +
+                    ' </div>' +
+                    ' </div>' +
+                    '  <div class="replies"></div>' +
+                    ' <p class="viewreplies">View all replies ...</p>' +                   
+                    ' </div>' +
+                    ' </div > ' +
+                    ' </div > ' +
+                    ' </div > ';
+                $('#blah1').attr('src', '');
+                $("#profile").html(function (i, origText) {
+
+                    return origText + p;
+                });
+
+            });
+
+        });
+
+        //sendng message in chat
+        function send() {
+            var h = $('#send-msg').val();
+            $("#send-msg").val('');
+            console.log(h);
+            $("#reply").html(function (i, origText) {
+                return origText + '<div class="sent"><span>' + h + '</span></div>';
+            });
+
+        }
+
+        //for chat window open
+        function openForm() {
+            document.getElementById("chat-popup").style.display = "block";
+            var target = event.target;
+            console.log(event.target);
+            $(".msg-name .name").html(function (i, origText) {
+                return event.target.innerHTML;
+            });
+
+        }
+
+        //chat window close
+        function closeForm() {
+            document.getElementById("chat-popup").style.display = "none";
+        }
+
+
+    </script>
+    <style>
+        /* The popup chat - hidden by default */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            right: 100px;
+            border: 3px solid;
+            z-index: 9;
+            width: 23%;
+            background-color: #F5F5F5;
+        }
+
+            .chat-popup .card-header {
+                background-color: #003300;
+                color: white;
+                font-weight: bold;
+            }
+
+            .chat-popup .card-body {
+                max-height: 250px;
+                overflow-y: scroll;
+                background-color: #F5F5F5;
+            }
+
+        .sent {
+            text-align: right;
+            margin-top: 4px;
+        }
+
+            .sent span {
+                background-color: #ccccff;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-family: Verdana;
+                font-size: 17px;
+                border-radius: 25px;
+            }
+
+        .received {
+            text-align: left;
+            margin-top: 4px;
+        }
+
+            .received span {
+                background-color: #c2c2d6;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-family: Verdana;
+                font-size: 17px;
+                border-radius: 25px;
+            }
+    </style>
+</head>
+<body>
+    <section class="about-block">
+        <div class="container">
+            <br />
+            <h3 class="text-center">DashBoard</h3>
+            <br />
+            <p> We are a bunch of students interested in learning about and working with robots. We build and design robots, and participate in competitions.</p>
+            <br />
+        </div>
+    </section>
+    <div style="background-color:#D8D8D8">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-9">
+                    <br />
+                    <!--Upcoming events modal-->
+                    <!-- Modal -->
+                    <div class="modal-event modal fade" id="insight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Robotics insight II</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+
+                                    <p class="head">Description </p>
+                                    <p class="text">
+                                        Robotics club brings to you the next lecture of Robotics Insight-II on "Dynamic Modeling of 3-LEGGED JUMPING ROBOT". We all hope for the same active participation from you in this lecture too.
+
+                                        Details of the meeting on Dynamic Modeling lecture are as follows:-
+                                    </p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--subgroup modal-->
+                    <!-- Modal -->
+                    <div class="modal-event modal fade" id="subgroup-marketing" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        Sub group -
+                                        Marketing
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <p class="head">Description </p>
+                                    <p class="text">
+                                        Robotics club brings to you the next lecture of Robotics Insight-II on "Dynamic Modeling of 3-LEGGED JUMPING ROBOT". We all hope for the same active participation from you in this lecture too.
+
+                                        Details of  task assigned in the meeting on Dynamic Modeling lecture are as follows:-
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--upcoming Events-->
+                    <div class="cardview events ">
+                        <div class="cardview " style="background-color:#F8F8F8">
+
+                            <h5 class="text-center head banner">Upcoming Events and Activities</h5>
+
+                            <div class="row text-center">
+                                <div class="col-4 d-flex">
+                                    <div class="inner col content">
+                                        <p class="head" data-toggle="modal" data-target="#insight">Insight</p>
+                                        <p class="text"> Lecture of Robotics Insight-II on "Dynamic Modeling of 3-LEGGED JUMPING ROBOT" & Task list </p>
+                                        <p class="readmore" data-toggle="modal" data-target="#insight">Readmore</p>
+                                    </div>
+
+                                </div>
+                                <div class="col-4 d-flex">
+                                    <div class="inner col content">
+                                        <p class="head" data-toggle="modal" data-target="#subgroup-marketing">Subgroup - Marketing</p>
+                                        <p class="text">
+                                            SUB- GROUP MARKETING
+                                            ROBOTICS INSIGHT II
+                                            Task allotment list for members
+                                        </p>
+                                        <p class="readmore" data-toggle="modal" data-target="#subgroup-marketing">Readmore</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-4 d-flex">
+                                    <div class="inner col content">
+                                        <p class="head">Robowars</p>
+                                        <p class="text"> Come, transform your fantasies into reality. Maybe your reality into a fantasy.</p>
+                                        <p class="readmore">Readmore</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+
+                    <!--Announcements and Meetings-->
+                    <div class="cardview announcements">
+                        <div class="cardview" style="background-color:#F8F8F8">
+                            <h5 class="text-center head banner">Announcements and Meetings</h5>
+                            <div class="row">
+                                <div class="col-4 d-flex">
+                                    <div class="text inner col">
+                                        <p class="head">Cultural fest</p>
+                                        <ul>
+                                            <li>Team meeting at 10</li>
+                                            <li>Team meeting at 4.60.12</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex">
+                                    <div class="text inner col">
+                                        <p class="head">Hackathon</p>
+                                        <ul>
+                                            <li>Marketing team at 6</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex">
+                                    <div class="text inner col">
+                                        <p class="head">Robowars</p>
+                                        <ul>
+                                            <li>Event at 7 pm</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--subgroup modal-->
+                    <!-- Modal -->
+                    <div class="modal-event modal fade" id="gaming" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        Gaming-Console
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <p class="head">Description </p>
+                                    <p class="text">
+                                        Aimed to build a console that can be used to play PC Games in real world using VR
+
+                                        Link to project video: https://youtu.be/q1Cu7SI8EYw
+
+                                        Wireless playing console: upload razor code in both IMU with some changes, so that they can provide proper input to Processing code Run both processing code one by one after check serial port from which processing takes input
+                                    </p>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Team projects-->
+                    <div class="cardview events ">
+                        <div class="cardview " style="background-color:#F8F8F8">
+
+                            <h5 class="text-center head banner">Team Projects</h5>
+
+                            <div class="row text-center">
+                                <div class="col-4 d-flex">
+                                    <div class="inner col content">
+                                        <p class="head" data-toggle="modal" data-target="#gaming">Gaming-Console</p>
+                                        <p class="text">
+
+                                            Aimed to build a console that can be used to play PC Games in real world using VR
+                                        </p>
+                                        <p class="readmore" data-toggle="modal" data-target="#gaming">Readmore</p>
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex">
+                                    <div class="inner col content">
+
+                                    </div>
+                                </div>
+                                <div class="col-4 d-flex">
+                                    <div class="inner col content">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+
+                    <!--new post-->
+                    <div class="cardview">
+                        <div class="cardview create">
+                            <div class="head">Create new Post<div style="float:right"><button type="button" class="btn button" data-toggle="modal" data-target="#newpost">Create Post</button></div></div>
+                        </div>
+                    </div>
+                    <!--new post modal posts-->
+                    <div class="modal fade" id="newpost" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Create New Post</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="new-msg">
+                                        <div class="msg-box">
+                                            <div class="text-msg">
+                                                <div class="form-group">
+                                                    <textarea name="txtMsg" class="form-control" placeholder="Hey, what have you been doing?" height: 100px;" id="hey"></textarea>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <img id="blah1" src="" width="100" height="40" style="display:none"/>
+                                                        <button id="camera"><i class="fa fa-camera" aria-hidden="true"></i></button>
+                                                        <input type="file" id="camera1" style="display:none" />
+
+                                                        <span id="cam-txt"></span>
+                                                        <button id="video"><i class="fas fa-video"></i></button>
+                                                        <input type="file" id="video1" style="display:none" />
+                                                        <button id="file"><i class="fa fa-file" aria-hidden="true"></i></button>
+                                                        <input type="file" id="file1" style="display:none" />
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <button type="button" class="btn-info send-button">Facebook</button>
+                                                        <br />
+                                                        <button type="button" class="btn-info send-button">Instagram</button>
+                                                        <br />
+                                                        <button type="button" class="btn-info send-button">Newsletter</button>
+                                                        <br />
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <button type="button" class="btn-info send-button">Broadcast</button>
+                                                        <br />
+                                                        <div class="dropdown">
+                                                            <button type="button" class="btn-info subgroup send-button dropdown-toggle" data-toggle="dropdown">
+                                                                Sub group
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu1" role="menu" aria-labelledby="dropdownMenu">
+                                                                <a class="dropdown-item" href="#">Team 1</a>
+                                                                <a class="dropdown-item" href="#">Team 2</a>
+                                                                <a class="dropdown-item" href="#">Team 3</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown">
+                                                            <button type="button" class="btn-info personal send-button dropdown-toggle" data-toggle="dropdown">
+                                                                Personal
+                                                            </button>
+                                                            <div class="dropdown-menu dropdown-menu2" role="menu" aria-labelledby="dropdownMenu">
+                                                                <a class="dropdown-item" href="#">Mridhula</a>
+                                                                <a class="dropdown-item" href="#">Aarti</a>
+                                                                <a class="dropdown-item" href="#">Tulika</a>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        <button type="button" class="btn-primary send-button" id="createpost"   data-dismiss="modal" aria-label="Close">Send</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="break">
+
+                    </div>
+
+                    <!--Card for profile-->
+                    <div id="profile">
+                        <div class="cardview">
+                            <div class="cardview ">
+                                <div class="card profile">
+                                    <div class="card-name"> <img class="card_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;Mridhula<span class="time1">- 04:30 pm</span> </div>
+                                    <div class="card-body">
+                                        <p class="card-text heading">Hey guys check out our new event...</p>
+                                        <img class="card-img" src="http://old.maker-works.com/wp-content/uploads/2016/01/makeathon-splash-logo.png" />
+
+                                        <p class="likeicon"><span class="like"><i class="fas fa-thumbs-up "></i></span>&nbsp;&nbsp;<i class="fas fa-reply"></i></p>
+                                        <div class="text-center">
+                                            <div class="input-group">
+                                                <input class="form-control reply" type="search" placeholder="Reply">
+                                                <span class="input-group-append">
+                                                    <button class="btn btn-outline-secondary replybtn" type="button">
+                                                        <i class="fas fa-reply"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="replies"></div>
+                                        <p class="viewreplies">View all replies ...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cardview">
+                            <div class="cardview">
+                                <div class="card profile">
+                                    <div class="card-name"> <img class="card_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;Aarti<span class="time1">- 04:30 pm</span> </div>
+                                    <div class="card-body">
+                                        <p class="card-text heading">Vogue - Fashion Designing Competition</p>
+                                        <img class="card-img" src="https://www.cv-library.co.uk/career-advice/wp-content/uploads/2018/03/rsz_fashion_designer_1.jpg" />
+
+                                        <p class="likeicon"><span class="like"><i class="fas fa-thumbs-up "></i></span>&nbsp;&nbsp;<i class="fas fa-reply"></i></p>
+                                        <div class="text-center">
+                                            <div class="input-group">
+                                                <input class="form-control reply" type="search" placeholder="Reply">
+                                                <span class="input-group-append">
+                                                    <button class="btn btn-outline-secondary replybtn" type="button" >
+                                                        <i class="fas fa-reply"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="replies"></div>
+                                        <p class="viewreplies">View all replies ...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                <div class="col-3">
+                    <br />
+                    <!--alert-->
+                    <div class="alert alert-warning">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                            ×
+                        </button>
+                        <i class="fa fa-exclamation" aria-hidden="true"></i>&nbsp;&nbsp;<strong>Warning Message</strong>
+                        <hr class="message-inner-separator">
+                        <p>
+                            We have created a default club page.
+                        </p>
+                    </div>
+
+                    <!--Notifications-->
+                    <div class="card notifications">
+                        <div class="card-header">
+                            <i class="fas fa-flag-checkered"></i>&nbsp; &nbsp;My Notifications
+                        </div>
+                        <div class="card-body notification-list">
+                            <ul>
+                                <li>Meeting at monday</li>
+                                <span class="time">- 05:10 pm</span>
+                                <li>complete buying material</li>
+                                <span class="time">- 09:10 pm</span>
+                                <li>Members to contact 99xxxx for Tshirts</li>
+                                <span class="time">- 05:10 pm</span>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <!--todo list popup-->
+                    <div class="modal-event modal fade" id="todolistpopup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        To-Do list
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            
+                                            <div class="col-5">
+                                                <p class="head">Description </p>                                                
+                                            </div>
+                                            <div class="col-3">
+                                                <p class="head">Assigned by  </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p class="head">Finish by </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p class="head">Status</p>
+                                            </div>
+
+                                        </div>
+                                        <div class="row">
+                                            
+                                            <div class="col-5">
+                                                <p>Talk to sponsors</p>
+                                                <span class="time">- 05:10 pm</span>
+                                            </div>
+                                            <div class="col-3">
+                                                <p>Finance head </p>
+                                            </div>
+                                            <div class="col-2">
+                                                <p>24/7/2019</p>
+                                            </div>
+                                            <div class="col-2">
+                                                <label class="switch">
+                                                    <input type="checkbox">
+                                                    <span class="slider"></span>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--todo list-->
+                    <div class="card todo" >
+                        <div class="card-header"data-toggle="modal" data-target="#todolistpopup">
+                            <i class="fas fa-list-ul"></i>&nbsp; &nbsp;ToDo List
+                        </div>
+                        <div class="card-body todo-list">
+                            <ul>
+                                <li><span data-toggle="modal" data-target="#todolistpopup">Talk to sponspors</span><div class="todocheck"><input class="todocheck" type="checkbox" checked data-toggle="toggle" data-on="Done" data-off="Pending" data-onstyle="success" data-offstyle="danger" data-size="xs"></div></li>
+                                
+                                <li><span data-toggle="modal" data-target="#todolistpopup">Buy material for stage decoration</span><br /><input class="todocheck" type="checkbox" checked data-toggle="toggle" data-on="Done" data-off="Pending" data-onstyle="success" data-offstyle="danger" data-size="xs"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+
+
+                    <!--Messaging-->
+                    <div class="card messaging">
+                        <div class="card-header">
+                            <i class="fas fa-comments"></i>&nbsp;Messaging
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <input class="form-control py-2" id="searchcontact" type="search" placeholder="Search People ...">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <div class=" message-list" id="contacts">
+                                <ul class="list-group list-group-flush ">
+                                    <li class="list-group-item"><img class="msg_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;<span class="open-button" onclick="openForm()">Mridhula</span>&nbsp;<i stye="float:right" class="fas fa-comments"></i></li>
+                                    <li class="list-group-item"><img class="msg_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;<span class="open-button" onclick="openForm()">Tulika</span></li>
+                                    <li class="list-group-item"><img class="msg_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;<span class="open-button" onclick="openForm()">Aarti</span></li>
+                                    <li class="list-group-item"><img class="msg_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;<span class="open-button" onclick="openForm()">xxxx</span></li>
+                                    <li class="list-group-item"><img class="msg_img" src="https://ptetutorials.com/images/user-profile.png">&nbsp;<span class="open-button" onclick="openForm()">yyy</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-popup" id="chat-popup">
+                        <div class="cardview">
+                            <div class="card">
+                                <div class="card-header">
+                                    <div class="msg-name"> <img class="msg_img" src="https://ptetutorials.com/images/user-profile.png"><span class="name">&nbsp;Mridhula</span><div onclick="closeForm()" style="float:right"><i class="fas fa-times"></i> </div></div>
+                                </div>
+                                <div class="card-body" id="reply">
+                                    <div class="sent"><span>Sent</span></div>
+                                    <div class="received"><span>Received</span></div>
+                                    <div class="sent"><span>Hey...</span></div>
+                                    <div class="received"><span>hi</span></div>
+                                    <div class="sent"><span>Wasup?</span></div>
+                                    <div class="received"><span>nm</span></div>
+                                    <div class="sent"><span>Sent</span></div>
+                                    <div class="received"><span>Received</span></div>
+                                    <div class="sent"><span>Sent</span></div>
+                                    <div class="received"><span>Received</span></div>
+
+                                </div>
+                                <div class="input-group">
+                                    <input class="form-control" type="search" placeholder="Type message..." id="send-msg">
+                                    <span class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" onclick="send()">
+                                            <i class="fas fa-reply"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+    </div>
+
+
+    <section class="contact-block">
+        <div class="container contact">
+
+            <p class="text-center head">Our Team</p>
+
+            <div class="row text-center">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtksemhdmG3lDOLC4HEgAeo0hJ2-vklRE7lFV-NCkDZDQrFeoU" class="img-responsive contact-img" alt="">
+                    <p class="name">Mridhula</p>
+                    <p class="pos">President</p>
+                    <div class="follow">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img src="http://www.webcoderskull.com/img/team4.png" class="img-responsive contact-img" alt="">
+                    <p class="name">Aarti</p>
+                    <p class="pos">Team Lead</p>
+                    <div class="follow">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYebZ70PbD8iZaPXqW5zDPe0b9F-8BHEDCFeuuJ8Bew3xQTuXc" class="img-responsive contact-img" alt="">
+                    <p class="name">Tulika</p>
+                    <p class="pos">Marketing Lead</p>
+                    <div class="follow">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm70yCfuy_ty4B9ED1kn8ZhuhQ688slKDB21qPsFT4nCSxsFMgqA" class="img-responsive contact-img" alt="">
+                    <p class="name">Mridhula</p>
+                    <p class="pos">Treasurer</p>
+                    <div class="follow">
+                       <i class="fab fa-facebook-f"></i>
+                       <i class="fas fa-envelope"></i>
+                       <i class="fas fa-comments"></i>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+    </section>
+
+    <div class="bg-dark footer">
+        <br>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4 footer-about wow fadeInUp">
+                        <h3>Connect With Us</h3>
+                        <h3>Robotics Club</h3>                      
+                        <p>
+                            We are always looking for new and creative ideas to advance in technology everyday.
+                        </p>
+
+                    </div>
+                    <div class="col-md-4 col-lg-4 offset-lg-1 ">
+                        <h3>Contact</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Adyar chennai</p>
+                        <p><i class="fas fa-phone"></i> Phone: (0039) 333 12 68 347</p>
+                        <p><i class="fas fa-envelope"></i> Email: <a href="mailto:hello@domain.com">hello@domain.com</a></p>
+                        <p><i class="fab fa-skype"></i> Skype: you_online</p>
+                    </div>
+                    <div class="col-md-4 col-lg-3  ">
+                        <h3>Follow us</h3>
+                        <p>
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-pinterest"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+

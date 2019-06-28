@@ -1,0 +1,52 @@
+﻿.backgrd {
+    background-color: #f9f9f9;
+}
+.right-side {
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Open Sans';
+    color: white;
+}
+.right-side:hover {
+    font-weight: bold;
+    font-size: 15px;
+    font-family: 'Open Sans';
+    color: white;
+    text-decoration: underline;
+}
+.signup {
+    font-size: 12px;
+    font-family: 'Open Sans';
+    color: white;
+    line-height: 1.8;
+  
+}
+#loginpage {
+    text-align: center;
+    margin: 10px;
+    border-color: white;
+    border-radius: 10px;
+}
+
+
+#forgot {
+    font-size: 13px;
+    color: blue;
+}
+
+    #forgot:hover {
+        text-decoration: underline;
+        color: blue;
+    }
+
+.tab {
+    color: blue;
+}
+
+    .tab:hover {
+        text-decoration: underline;
+    }
+#mod {
+    margin:10px;
+    border-color:white;
+}

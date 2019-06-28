@@ -1,0 +1,116 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+
+    <title>Hello, world!</title>
+    <script>
+        $(document).ready(function () {
+            
+            $('#submitemail').click(function () {
+                $("#aftersumbitemail").empty();
+               
+
+            });
+            $('#imgInp').click(function () {
+                $("#aftersumbitphoto").empty();
+               
+
+            });
+            function readURL(input) {
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+
+                        $("#photo").append('<img id="blah" src="#" width=150 height = 200 alt = "addphoto" />');
+                        $('#blah').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("#imgInp").change(function () {
+
+                readURL(this);
+            });
+
+        });
+
+
+    </script>
+    <style>
+        #aftersumbitemail {
+            color: red;
+        }
+
+        #aftersumbitphoto {
+            color: red;
+        }
+
+        #or {
+            text-align: center;
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="bg-light">
+        <div class="container">
+            <br>
+            <h4>Please validate your account</h4>
+            <br>
+            <form id="emailform" method="GET" action="confirmation_email.html">
+                <p>College Email id (If available):</p>
+                <div class="input-group">
+                    <input type="text" class="form" placeholder="Enter college Email:" id="email" name="email">
+                    <div class="input-group-btn">
+                        <button id="submitemail" class="btn btn-default btn-primary" type="submit">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <p id="aftersumbitemail"></p>
+            <br />
+            <p id="or">OR</p>
+            <h4>Please upload a picture of your college ID</h4>
+            <br>
+            <form id="photoform" method="GET" action="confirmation_photo.html">
+                <p id="photo"></p>
+
+                <input type='file' id="imgInp">
+                <p id="aftersumbitphoto"></p>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+
+        </div>
+
+    </div>
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

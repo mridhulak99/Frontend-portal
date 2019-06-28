@@ -1,0 +1,506 @@
+﻿<!-- Custom CSS for Error Color -->
+<style>
+    .custom-error-class {
+        color: #FF0000; /* red */
+        font-weight: normal;
+    }
+
+    .custom-valid-class {
+        color: black; /* black */
+        font-weight: normal;
+    }
+
+</style>
+
+<!-- Facebook Login Javascript Start -->
+<script src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+<script>
+      window.fbAsyncInit = function() {
+         FB.init({
+            appId      : '382419535941429',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v3.1' // use graph api version 3.1
+          });
+      };
+
+      function getFacebookLoginInfo() {
+        FB.api('/me', { locale: 'en_US', fields: 'id, name, first_name, last_name, email, gender' },
+          function(response) {
+              document.getElementById("facebook_email_address").value = response.email;
+              document.getElementById("facebook_first_name").value = response.first_name;
+              document.getElementById("facebook_last_name").value = response.last_name;
+              document.getElementById("fb_first_name").value = response.first_name;
+              document.getElementById("fb_last_name").value = response.last_name;
+              document.getElementById("fb_name").value = response.name;
+              document.getElementById("fb_gender").value = response.gender;
+              document.getElementById("fb_email").value = response.email;
+              document.getElementById("fb_id").value = response.id;
+
+              if ("" + response.email == "undefined") {
+                 FB.api("/me/permissions","DELETE",function(response){
+                     console.log(response); //gives true on app delete success
+                 });
+              } else {
+                 document.forms['facebookLoginForm'].submit();
+              }
+          }
+        );
+      }
+
+      function doFacebookLogout() {
+         FB.logout(function(response) {
+            // user is now logged out
+         });
+      }
+
+      function doFacebookLogin() {
+         FB.login(function(response) {
+             if (response.authResponse) {
+              FB.api('/me', function(response) {
+                getFacebookLoginInfo();
+              });
+             }
+         }, {scope: 'email'});
+      }
+
+      // If the facebook user is logged in, log him out
+      doFacebookLogout();
+</script>
+
+<!-- Facebook Login Javascript End -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+
+    <style>
+        #signuppage {
+            text-align: center;
+        }
+
+        #forgot {
+            font-size: 13px;
+            color: blue;
+        }
+
+            #forgot:hover {
+                text-decoration: underline;
+                color: blue;
+            }
+
+        .tab {
+            color: blue;
+        }
+
+            .tab:hover {
+                text-decoration: underline;
+            }
+
+        .drop {
+            width: 300px;
+            align-content: center;
+            width: 200px;
+            margin-left: 42%;
+            text-align: center
+        }
+        .head {
+            background-color: darkblue;
+            font-weight: bold;
+            color: white
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+
+            // add the rule here
+            $.validator.addMethod("valueNotEquals", function(value, element, arg){
+                return arg !== value;
+            }, "This field is required");
+
+            $('#signup').validate({
+                rules: {
+                    email_address: {
+                        required: true,
+                        email:true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    last_name: {
+                        required: true
+                    },
+                    first_name: {
+                        required: true
+                    },
+                    college_state: {
+                        required: true,
+                        valueNotEquals: "default"
+                    },
+                    college: {
+                        required: true,
+                        valueNotEquals: "default"
+                    },
+                    course: {
+                        required: true
+                    },
+                    year: {
+                        required: true
+                    }
+                },
+                messages: {},
+                errorPlacement: function(error, element) {
+                if (element.attr("name") == "college_state" )
+                   error.insertAfter(".state_errors");
+                else if (element.attr("name") == "college" )
+                   error.insertAfter(".college_errors");
+                else
+                   error.insertAfter(element);
+                }
+            });
+
+        });
+    </script>
+    <title>Signup</title>
+</head>
+<body>
+
+
+
+
+
+
+
+
+    <!-- Login Modal Popup Code Start -->
+    <!-- Custom CSS for Error Color -->
+    <style>
+        .custom-error-class {
+            color: #FF0000; /* red */
+            font-weight: normal;
+        }
+
+        .custom-valid-class {
+            color: black; /* black */
+            font-weight: normal;
+        }
+    </style>
+
+    <!-- Facebook Login Javascript Start -->
+    <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <script>
+      window.fbAsyncInit = function() {
+         FB.init({
+            appId      : '382419535941429',
+            cookie     : true,  // enable cookies to allow the server to access
+                                // the session
+            xfbml      : true,  // parse social plugins on this page
+            version    : 'v3.1' // use graph api version 3.1
+          });
+      };
+
+      function getFacebookLoginInfo() {
+        FB.api('/me', { locale: 'en_US', fields: 'id, name, first_name, last_name, email, gender' },
+          function(response) {
+              document.getElementById("facebook_email_address").value = response.email;
+              document.getElementById("facebook_first_name").value = response.first_name;
+              document.getElementById("facebook_last_name").value = response.last_name;
+              document.getElementById("fb_first_name").value = response.first_name;
+              document.getElementById("fb_last_name").value = response.last_name;
+              document.getElementById("fb_name").value = response.name;
+              document.getElementById("fb_gender").value = response.gender;
+              document.getElementById("fb_email").value = response.email;
+              document.getElementById("fb_id").value = response.id;
+
+              if ("" + response.email == "undefined") {
+                 FB.api("/me/permissions","DELETE",function(response){
+                     console.log(response); //gives true on app delete success
+                 });
+              } else {
+                 document.forms['facebookLoginForm'].submit();
+              }
+          }
+        );
+      }
+
+      function doFacebookLogout() {
+         FB.logout(function(response) {
+            // user is now logged out
+         });
+      }
+
+      function doFacebookLogin() {
+         FB.login(function(response) {
+             if (response.authResponse) {
+              FB.api('/me', function(response) {
+                getFacebookLoginInfo();
+              });
+             }
+         }, {scope: 'email'});
+      }
+
+      // If the facebook user is logged in, log him out
+      doFacebookLogout();
+    </script>
+
+    <!-- Facebook Login Javascript End -->
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <script>
+        $(document).ready(function () {
+
+            $('#login').validate({
+                rules: {
+                    email_address: {
+                        required: true,
+                        email:true
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    }
+                }
+            });
+
+        });
+        </script>
+    </head>
+    <body>
+
+        <!-- Login Modal Start -->
+
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="width:350px;">
+                <div class="modal-content">
+
+                    <div class="container pt-3">
+                        <div class="row justify-content-sm-center">
+                            <div class="col">
+                                <div class="card border-info text-center">
+                                    <div class="card-header">
+                                        <h4>Login</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form id="login" class="form-signin form" method="post" action="/process-login">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control mb-2" placeholder="Username (Email Address):" name="email_address" id="email_address" value="" required autofocus>
+
+                                                <input type="password" class="form-control mb-2" placeholder="Password" id="password" name="password" value="">
+                                                <div class="small"><a href="/forgotpassword">Forgot password</a></div>
+                                            </div>
+                                            <button type="submit" class="btn btn-primary btn-block mb-1">Login</button>
+                                            <br />
+                                            <div class="small">New to Clubs4All? <a href="/signup">Register</a></div>
+
+                                        </form>
+                                        <p>or</p>
+                                        <a href="#" onclick="doFacebookLogin();return false;" id="fbLink"><img src="https://png.icons8.com/color/x/facebook.png" alt="Image result for login with facebook" />Login with facebook</a>
+                                        <br>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Login Modal Start -->
+
+        <form id="facebookLoginForm" method="POST" action="/process-fb-signup" novalidate="novalidate">
+            <input type="hidden" class="form-control" name="email_address" id="facebook_email_address">
+            <input type="hidden" class="form-control" name="first_name" id="facebook_first_name">
+            <input type="hidden" class="form-control" name="last_name" id="facebook_last_name">
+            <input type="hidden" class="form-control" name="fb_first_name" id="fb_first_name">
+            <input type="hidden" class="form-control" name="fb_last_name" id="fb_last_name">
+            <input type="hidden" class="form-control" name="fb_name" id="fb_name">
+            <input type="hidden" class="form-control" name="fb_gender" id="fb_gender">
+            <input type="hidden" class="form-control" name="fb_email" id="fb_email">
+            <input type="hidden" class="form-control" name="fb_id" id="fb_id">
+        </form>
+
+    </body>
+</html>
+
+
+<!-- Login Modal Popup Code End -->
+
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+</head>
+
+<body>
+    <!-- CSS, JS files required for dropdown to work -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <div class="bg-light">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+                <a class="navbar-brand" href="/"><img src="/images/company/logo.png" width="124" height="24"></a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item active rightside">
+                            <a class="nav-link rightside" href="#" data-toggle="modal" data-target="#login-modal">Login</a>
+                        </li>
+                        <li class="nav-item active rightside">
+                            <a class="nav-link rightside" href="/signup">Signup</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+
+
+
+
+    <div style="background-color:#fff7e6">
+        <div class="container">
+            <div class="row justify-content-sm-center">
+                <duv class="col-8">
+
+                </duv>
+                <div class="col-4">
+                    <div class="card border-info text-center">
+                        <div class="card-header">
+                            <h4 class=".head">Signup</h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="signup" class="form-signin form" method="post" action="/process-signup">
+                                <div class="form-group">
+                                    <input type="text" class="form-control mb-2" placeholder="Username (Email Address):" name="email_address" id="email_address" value="" required autofocus>
+
+                                    <input type="password" class="form-control mb-2" placeholder="Password" id="password" name="password" value="">
+                                    <input class="form-control mb-2" placeholder="Firstname" type="text" name="first_name" id="first_name" value="">
+                                    <input class="form-control mb-2" placeholder="Lastname" type="text" name="last_name" id="last_name" value="">
+
+                                    <div class="input-group mb-3">
+                                        <select class="custom-select" id="college_state" name="college_state">
+                                            <option selected value="default">College Location (State)</option>
+                                            <option>Maharashtra</option>
+                                            <option>Rajasthan</option>
+                                            <option>West Bengal</option>
+                                        </select>
+                                    </div>
+                                    <div class="state_errors"></div>
+
+                                    <div class="input-group mb-3">
+                                        <select class="custom-select" id="college" name="college">
+                                            <option selected value="default">College Name</option>
+                                            <option>VIT Vellore</option>
+                                            <option>IIT Delhi</option>
+                                        </select>
+                                    </div>
+                                    <div class="college_errors"></div>
+
+                                    <input class="form-control mb-2" placeholder="Course" type="text" name="course" id="course">
+                                    <input class="form-control mb-2" placeholder="Year" type="text" name="year" id="year">
+
+                                    <div id="errors" class="errors" name="errors"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block mb-1">Register</button>
+                                <br />
+
+                            </form>
+                            <p>or</p>
+                            <a href="#" onclick="doFacebookLogin();return false;" id="fbLink"><img src="https://png.icons8.com/color/x/facebook.png" alt="Image result for login with facebook" />Register with facebook</a>
+                            <br>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <form id="facebookLoginForm" method="POST" action="/process-fb-signup" novalidate="novalidate">
+        <input type="hidden" class="form-control" name="email_address" id="facebook_email_address">
+        <input type="hidden" class="form-control" name="first_name" id="facebook_first_name">
+        <input type="hidden" class="form-control" name="last_name" id="facebook_last_name">
+        <input type="hidden" class="form-control" name="fb_first_name" id="fb_first_name">
+        <input type="hidden" class="form-control" name="fb_last_name" id="fb_last_name">
+        <input type="hidden" class="form-control" name="fb_name" id="fb_name">
+        <input type="hidden" class="form-control" name="fb_gender" id="fb_gender">
+        <input type="hidden" class="form-control" name="fb_email" id="fb_email">
+        <input type="hidden" class="form-control" name="fb_id" id="fb_id">
+    </form>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<div class="bg-dark">
+    <div class="container bg-dark text-white">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col order-1 hidden-sm" style="text-align: right;">
+                <a href="/about" style="text-decoration: none; color:white;"><span style="margin-right:20px;">About us</span></a>
+                <a href="/contact" style="text-decoration: none; color:white;"><span style="margin-right:20px;">Contact us</span></a>
+                <a href="/join" style="text-decoration: none; color:white;"><span style="margin-right:20px;">Join our Team</span></a>
+                <a href="/terms" style="text-decoration: none; color:white;"><span style="margin-right:20px;">Terms & Conditions</span></a>
+                <a href="/privacy" style="text-decoration: none; color:white;"><span style="margin-right:20px;">Privacy</span></a>
+            </div>
+        </div>
+        <hr style="background-color:white;"></hr>
+        <p id="copyrights">&copy Copyright 2019 Clubs4All</p>
+        <br>
+    </div>
+</div>
+
+

@@ -1,0 +1,35 @@
+﻿
+.img{
+    width:100%;
+    height:350px;
+}
+
+.carousel-content2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 30px;
+    font-family: 'Open Sans';
+}
+
+.carousel-content1 {
+    position: absolute;
+    top: 40%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 30px;
+    font-family: 'Open Sans';
+}
+
+.carousel-content3 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-family: 'AR CHRISTY';
+}

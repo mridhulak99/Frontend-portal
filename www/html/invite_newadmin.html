@@ -1,0 +1,169 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+ 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css">
+    
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+
+
+    <style>
+        .data-form {
+            background: #f1f7fc;
+            padding: 80px 0;
+        }
+
+        @media (max-width:767px) {
+            .data-form {
+                padding: 20px 0;
+            }
+        }
+
+        .data-form form {
+            max-width: 580px;
+            width: 90%;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 4px;
+            color: #505e6c;
+            box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width:767px) {
+            .data-form form {
+                padding: 30px;
+            }
+        }
+
+        .data-form h2 {
+            margin-top: 5px;
+            font-weight: bold;
+            font-size: 28px;
+            margin-bottom: 36px;
+            color: inherit;
+        }
+
+        .data-form .form-group:last-child {
+            margin-bottom: 5px;
+        }
+
+        .data-form form .form-control {
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 1px 1px 1px rgba(0,0,0,0.05);
+            outline: none;
+            color: inherit;
+            padding-left: 12px;
+            height: 42px;
+        }
+
+            .data-form form .form-control:focus {
+                border: 1px solid #b2b2b2;
+            }
+
+        .data-form form textarea.form-control {
+            min-height: 100px;
+            max-height: 260px;
+            padding-top: 10px;
+            resize: vertical;
+        }
+
+        .data-form form .btn {
+            padding: 16px 32px;
+            border: none;
+            background: none;
+            box-shadow: none;
+            text-shadow: none;
+            opacity: 0.9;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.4px;
+            line-height: 1;
+            outline: none !important;
+        }
+
+            .data-form form .btn:hover {
+                opacity: 1;
+            }
+
+            .data-form form .btn:active {
+                transform: translateY(1px);
+            }
+
+        .data-form form .btn-primary {
+            background-color: #055ada !important;
+            margin-top: 15px;
+            color: #fff;
+        }
+
+        .msg {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .button {
+        }
+
+        .message {
+            color: blue;
+            border: 2px solid black;
+        }
+
+        .admins{
+            font-size:13px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $(".plus").click(function () {
+                $("#inputs").append('<div class="input-group input-group-sm mb-3"> < input type = "text" class= "form-control" aria - label="Small" aria - describedby="inputGroup-sizing-sm" > <div class="input-group-append plus"><span class="input-group-text plus" id="inputGroup-sizing-sm"><i class=" fas fa-plus"></i></span> </div> </div >');
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+
+    <div class="data-form">
+        <form method="post">
+            <p class="msg">Provide email addresses of people you want to invite</p>
+            <p class="text-danger admins">Only 3 admins can be added</p>
+            <div id="inputs">
+                <div class="input-group input-group-sm mb-3">
+
+                    <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+                    <div class="input-group-append plus">
+                        <span class="input-group-text plus" id="inputGroup-sizing-sm"><i class=" fas fa-plus"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="button" class="btn btn-primary  button">Submit</button>
+            </div>
+
+
+            <br />
+            <br />
+            <p class="message text-center"><br>An email has been sent to the invitees. <br></p>
+        </form>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

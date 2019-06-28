@@ -1,0 +1,31 @@
+﻿#footheading{
+    font-weight:bold;
+    font-size:17px;
+    font-family:'Open Sans';
+}
+#footdata {
+    font-size: medium;
+    line-height: 5px;
+    font-family: 'Open Sans';
+    font-size: 15px;
+    
+}
+
+#footdata:hover {
+    text-decoration: underline;
+}
+
+#copyrights{
+    font-size:12px;
+    text-align:right;
+}
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    color:black;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 0.5px;
+}

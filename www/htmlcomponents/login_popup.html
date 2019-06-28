@@ -1,0 +1,105 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+    <title>clubs For You</title>
+    <script>
+        $('#loginform').validate({
+            rules: {
+                username: {
+                    required: true,
+                    minlength: 5
+                },
+                password: {
+                    required: true,
+                    minlength: 5
+                }
+            }
+        });
+    </script>
+    <style>
+        #loginpage {
+            text-align: center;
+            margin: 10px;
+            border-color: black;
+            border-radius: 10px;
+        }
+
+
+        #forgot {
+            font-size: 13px;
+            color: blue;
+        }
+
+            #forgot:hover {
+                text-decoration: underline;
+                color: blue;
+            }
+
+        .tab {
+            color: blue;
+        }
+
+            .tab:hover {
+                text-decoration: underline;
+            }
+
+        #mod {
+            margin: 10px;
+            border-color: black;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="container pt-3">
+        <div class="row justify-content-sm-center">
+            <div class="col-sm-6 col-md-4">
+                <div class="card border-info text-center">
+                    <div class="card-header">
+                        <h4>Login Details</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <form id="loginform" class="form-signin" method="post" action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control mb-2" placeholder="Email" name="email" id="email" required autofocus >
+                                <input type="password" class="form-control mb-2" placeholder="Password" id="password" name="password">                               
+                            </div>
+                            <p id="forgot">Forgot passowrd</p>
+                            <button type="button" class="btn btn-primary btn-block mb-1">Login In</button>
+                            <br />
+                            <p style="font-size:12px">New to Campusforall?  <a href="signup_student.html"><span class="tab">Register</span></a> </p>
+                        </form>
+                        <p>or</p>
+                        <a href="https://www.facebook.com/clubsforall" target="_blank"><img src="https://png.icons8.com/color/x/facebook.png" alt="Image result for login with facebook" />Login with facebook</a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

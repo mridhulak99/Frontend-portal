@@ -1,0 +1,19 @@
+﻿#loginpage {
+text-align:center;
+}
+#forgot {
+    font-size: 13px;
+    color: blue;
+}
+
+#forgot:hover {
+    text-decoration: underline;
+    color: blue;
+}
+.tab{
+    color:blue;
+}
+
+.tab:hover {
+    text-decoration: underline;
+}

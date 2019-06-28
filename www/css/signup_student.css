@@ -1,0 +1,29 @@
+﻿#signuppage {
+    text-align: center;
+}
+
+#forgot {
+    font-size: 13px;
+    color: blue;
+}
+
+    #forgot:hover {
+        text-decoration: underline;
+        color: blue;
+    }
+
+.tab {
+    color: blue;
+}
+
+.tab:hover {
+    text-decoration: underline;
+}
+
+.drop {
+    width: 300px;
+    align-content: center;
+    width: 200px;
+    margin-left: 42%;
+    text-align:center
+}

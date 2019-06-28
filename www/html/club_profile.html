@@ -1,0 +1,187 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- javascript-->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <title>clubs For You</title>
+    <style>
+        .edit {
+            height: 500px;
+        }
+        .edit {
+            opacity: 0.2;
+        }
+      
+
+        .edit .text1 {
+            color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .edit .text {
+            color: gray;
+            text-align: center;
+            font-size: 15px;
+        }
+
+        .clubname {
+            color: white;
+            text-align: center;
+            font-family: Verdana;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .box {
+        }
+
+        .box .card {
+            border: 2px solid black;
+            border-left: 4px solid black;
+            font-weight: bold;
+            font-size: 25px;
+        }
+      
+        .box .card-group {
+            margin-left: 5%;
+            margin-right: 5%;
+        }x;
+        .text {
+            color: gray;
+            font-size: 15px;
+        }
+        #clubprofile{
+            color:white;
+        }
+        .form-control{
+            width:400px;
+        }
+        .headprofile{
+            font-family:Verdana;
+            font-size:23px;
+            font-weight:bold;
+        }
+        .textprofile {
+            font-family: Verdana;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <div class="conainer-fluid bg-dark">
+        <div class="row">
+            <div class="col-8">
+                <div style="background-color:#282828">
+                    <div class="container edit">
+                        <br>
+                        <br>
+                        <h3 class="clubname">Finance Club</h3>
+                        <br>
+                        <p class="text1">The Finance Club promotes finance-related activities and careers throughout the community</p>
+                        <br>
+                        <div class="row box">
+
+                            <div class="col-md-3 d-flex">
+                                <div class="card-group flex-fill">
+                                    <div class="card bg-white" >
+                                        <div class="card-body text-center">
+                                            <p class="card-text">Edit Club profile</p>
+                                            <p class="text">To add or edit the info that's shown on your clubs profile</p>
+                                            <i class="fas fa-edit"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-flex ">
+                                <div class="card-group flex-fill">
+                                    <div class="card bg-white flex-fill">
+                                        <div class="card-body text-center">
+                                            <p class="card-text">Manage your club</p>
+                                            <p class="text">To add or remove the members and add events</p>
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-flex">
+                                <div class="card-group flex-fill">
+                                    <div class="card bg-white flex-fill">
+                                        <div class="card-body text-center" >
+                                            <p class="card-text">Promote your club</p>
+                                            <p class="text">For promotions and awareness</p>
+                                            <i class="fas fa-volume-up"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 d-flex">
+                                <div class="card-group flex-fill">
+                                    <div class="card bg-white flex-fill">
+                                        <div class="card-body text-center" >
+                                            <p class="card-text">Invite Sponsers</p>
+                                            <p class="text">To find new sponsors and send out invitations.</p>
+                                            <i class="fa fa-address-book" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="bg-dark">
+                    <div class="container">
+                        <div class="row">
+                            <form id="clubprofile" class="form-signin form" method="post" action="">
+                                <br>
+                                <br>
+                                <p class="text-center headprofile">Complete your Club Profile...</p>
+                                <br>
+                                <div class="form-group">
+                                    <p class="textprofile">Does your club have a website or social media profile? Please provide the link here *</p>
+                                    <input class="form-control mb-2" placeholder="Enter website link: " type="text" name="weblink" id="weblink" required autofocus>
+                                    <br>
+                                    <p class="textprofile">How many members does the club have? </p>
+                                    <input class="form-control mb-2" placeholder="Enter number of members: " type="number" name="members" id="members">
+                                    <br>
+                                </div>
+                                <div class="text-center">
+                                    <button type="button" class="btn btn-primary ">Continue</button>
+                                </div>
+
+                                <br>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>                            
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.0/dist/jquery.validate.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
